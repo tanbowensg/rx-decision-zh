@@ -43,46 +43,46 @@ children:
         - label: 而且只要最后几个based on a given amount
           children:
           - label: takeLast
-      - label: 我想要所有的值，除非另一个 Observable 产生了值或者完成了until another Observable emits a value or completes
+      - label: 我想要所有的值，直到另一个 Observable 产生了值或者完成了until another Observable emits a value or completes
         children:
         - label: takeUntil
     - label: 我想忽略某些值I want to ignore values
       children:
-      - label: 忽略所有值？？？
+      - label: 我想忽略所有的值？？？
         children:
         - label: ignoreElements
-      - label: from the start of the Observable
+      - label: 我想忽略 Observable 的前几个值 from the start of the Observable
         children:
-        - label: based on a given amount
+        - label: 只忽略前几个
           children:
           - label: skip
-        - label: based on custom logic
+        - label: 只要满足一定条件就忽略based on custom logic
           children:
           - label: skipWhile
-      - label: from the end of the Observable
+      - label: 我想忽略 Observable 的最后一个值from the end of the Observable
         children:
         - label: skipLast
-      - label: until another Observable emits a value
+      - label: 我想忽略所有的值，直到另一个 Observable 产生了值或者完成了until another Observable emits a value
         children:
         - label: skipUntil
-      - label: that match some previous value
+      - label: 我想根据之前产生的值来忽略某些值that match some previous value
         children:
-        - label: according to value equality
+        - label: 如果新产生的值和之前产生过的一个值相等according to value equality
           children:
-          - label: emitted just before the current value
+          - label: 并且新产生的值正好是那个值的下一个emitted just before the current value
             children:
             - label: distinctUntilChanged
-          - label: emitted some time in the past
+          - label: 并且这个新产生的值不需要正好是那个值的下一个emitted some time in the past
             children:
             - label: distinct
-        - label: according to a key or object property
+        - label: 如果新产生的值的某个属性和之前的产生过的值的某个属性相等？？？according to a key or object property
           children:
-          - label: emitted just before the current value
+          - label: 并且新产生的值正好是那个值的下一个
             children:
             - label: distinctUntilKeyChanged
-      - label: that occur too frequently
+      - label: 我想忽略产生频率太快的值
         children:
-        - label: by emitting the first value in each time window
+        - label: 我想忽略掉每段时间窗口中除了第一个产生的值以外的所有值by emitting the first value in each time window
           children:
           - label: "where time windows are determined by another Observable's emissions"
             children:
